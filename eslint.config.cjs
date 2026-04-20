@@ -16,6 +16,7 @@ module.exports = [
       '**/scripts/**/*.cjs',
     ],
     languageOptions: {
+      ecmaVersion: '2022',
       sourceType: 'commonjs',
       globals: {
         process: 'readonly',
@@ -26,7 +27,6 @@ module.exports = [
       },
     },
     rules: {
-      'prettier/prettier': 'off',
       'import/order': 'off',
       'import/no-commonjs': 'off',
     },
@@ -35,7 +35,25 @@ module.exports = [
   // 2. Shared base config
   ...baseConfig,
 
-  // 3. Markdown override — active for .md files
+  // 3. JSX support for React components
+  {
+    files: ['**/*.{js,jsx}'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      ecmaFeatures: {
+        jsx: true,
+      },
+    },
+    plugins: {
+      react: require('eslint-plugin-react'),
+    },
+    rules: {
+      'react/react-in-jsx-scope': 'off',
+    },
+  },
+
+  // 4. Markdown override — active for .md files
   // {
   //   files: ['**/*.md'],
   //   processor: 'markdown/markdown',
@@ -46,6 +64,6 @@ module.exports = [
   //   },
   // },
 
-  // // 4. Repo-specific overrides
+  // // 5. Repo-specific overrides
   // ...localOverrides,
 ];
