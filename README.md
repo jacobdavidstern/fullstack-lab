@@ -19,4 +19,4 @@ This repo serves as both a learning journal and a coding lab — a place to orga
 This repository is dedicated to learning and personal development.  
 Unless otherwise noted, all content is released under [The MIT License (MIT)](https://mit-license.org/).  
 
-Copyright (c) Jacob Stern, 2025-2026
+Copyright &copy; Jacob Stern, 2025-2026

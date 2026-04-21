@@ -2,7 +2,7 @@
 const js = require('@eslint/js');
 const eslintConfigPrettier = require('eslint-config-prettier');
 const importPlugin = require('eslint-plugin-import');
-const markdownPlugin = require('eslint-plugin-markdown');
+const markdownPlugin = require('@eslint/markdown');
 const prettierPlugin = require('eslint-plugin-prettier');
 const globals = require('globals'); // modern env globals
 const path = require('node:path');
@@ -56,15 +56,4 @@ module.exports = [
       'no-empty': 'warn',
     },
   },
-
-  // 5. (Optional) Markdown override can be added in repo config when ready
-  // {
-  //   files: ['**/*.md'],
-  //   processor: 'markdown/markdown',
-  //   rules: {
-  //     'prettier/prettier': ['warn', prettierConfig],
-  //     'no-undef': 'off',
-  //     'no-unused-vars': 'off',
-  //   },
-  // },
 ];
